@@ -1,0 +1,16 @@
+<div class="tasks-container">
+  <h2>Your Tasks</h2>
+
+  <button class="add-btn" (click)="addTask()">➕ Add New Task</button>
+
+  <div class="task-list" *ngIf="tasks.length > 0; else noTasks">
+    <div class="task-item" *ngFor="let task of tasks; let i = index">
+      <span>{{ task }}</span>
+      <button class="delete-btn" (click)="deleteTask(i)">🗑️ Delete</button>
+    </div>
+  </div>
+
+  <ng-template #noTasks>
+    <p>No tasks yet. Add one!</p>
+  </ng-template>
+</div>
